@@ -1,4 +1,4 @@
-package com.payment.integration.repo;
+package com.payment.integration.model;
 
 import java.util.Date;
 
@@ -22,7 +22,7 @@ public class Payment {
 	@Id
     @Column
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int paymentId;
+    private Long paymentId;
     @Column
     private String email;
     @Column
@@ -55,14 +55,15 @@ public class Payment {
     private String accountnumber;
     
     
-	public int getPaymentId() {
-		return paymentId;
-	}
-	public void setPaymentId(int paymentId) {
-		this.paymentId = paymentId;
-	}
+	
 	public String getPayername() {
 		return payername;
+	}
+	public Long getPaymentId() {
+		return paymentId;
+	}
+	public void setPaymentId(Long paymentId) {
+		this.paymentId = paymentId;
 	}
 	public void setPayername(String payername) {
 		this.payername = payername;

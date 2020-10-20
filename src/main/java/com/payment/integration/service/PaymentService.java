@@ -6,13 +6,17 @@ import org.springframework.stereotype.Repository;
 
 import com.payment.integration.model.PaymentCallback;
 import com.payment.integration.model.PaymentDetail;
-import com.payment.integration.repo.Payment;
+import com.payment.integration.model.Payment;
 
 @Repository
 public interface PaymentService {
 
 	boolean proceedPayment(PaymentDetail paymentDetail);
 	List<Payment> getAllPayments();
-	String payuCallback(PaymentCallback paymentResponse);
+	public List<Payment> updatePaymentStatus(long paymentId);
+	List<Payment> getAllPaymentActiveStatus();
+	boolean removePaymentInCart(long paymentId);
+	
+//	String payuCallback(PaymentCallback paymentResponse);
 
 }
